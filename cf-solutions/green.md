@@ -14,20 +14,10 @@ This means if k = 2, return n + m/n-1 to account for n itself so -1 and if k = 3
 **Second mistak:** we have to consider when m < n, n + m/n-1  doesn't hold when k = 2. Since we want all numbers possible < n, we must do
 min(m, n+m/n-1). 
 **Lesson:** must consider all cases, and write out what works and what doesn't. Here, this would've avoided both mistakes
-```cpp
-void solve(){
-    long long n,m,k; cin>>n>>m>>k;
-    if(k==1){
-        cout<<1<<endl;
-    }
-    else if(k == 2){
-        cout<<min(m,n+m/n-1LL)<<endl;
-    }
-    else if(k==3){
-        cout<<max(0LL,m-n-m/n+1LL)<<endl;
-    }
-    else{
-        cout<<0<<endl;
-    }
-}
-```
+
+## 1300
+### Math
+**Problem Link:** https://codeforces.com/contest/1850/problem/F
+This is simple since frogs all start from 0. Thus, it will land on x if x is a multiple of a_i. For each value a_i, we find how many frogs has that, then we use the trick n+n/2+n/3+... = nlogn to brute force over all multiples and add the number of frogs to the total frogs that land on that index. We then go through each index from 1 - n and find the one with maximum frogs(which is already stored).
+
+
